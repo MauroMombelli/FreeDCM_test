@@ -15,8 +15,10 @@
 // Header files
 
 #include "MahonyAHRS.h"
-#include "my_math/my_math.h"
+
 #include <stdio.h>
+#include "TrigonomeC/my_math.h"
+
 
 //---------------------------------------------------------------------------------------------------
 // Definitions

@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "dcm/dcm.h"
-
-#include "original/MahonyAHRS.h"
-#include "float.h"
+#include "FreeDCM/dcm.h"
+#include "original_implementations/MahonyAHRS.h"
 
 extern struct Vector3f gyroValue;
 extern struct Vector3f acceValue;
@@ -30,6 +28,8 @@ void do_step(int i) {
 
 	if (i%1000000 == 0){
 		printf("\nstep %i OK", i);
+
+		printf(" quat (%f,%f,%f,%f)", ris.w, ris.x, ris.y, ris.z);
 	}
 }
 

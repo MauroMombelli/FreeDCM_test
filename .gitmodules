@@ -1,0 +1,6 @@
+[submodule "TrigonomeC"]
+	path = TrigonomeC
+	url = https://github.com/MauroMombelli/TrigonomeC.git
+[submodule "FreeDCM"]
+	path = FreeDCM
+	url = https://github.com/MauroMombelli/FreeDCM.git
