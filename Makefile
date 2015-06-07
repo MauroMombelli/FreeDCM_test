@@ -12,6 +12,8 @@ LIBS= -I Dependencies  -lm
 
 SOURCE=$(shell find . -follow -name "*.c")
 
+.PHONY: all clean
+
 all: $(OBJ)
 	mkdir -p $(ODIR)
 	$(CC) $(CFLAGS) $(LIBS) $(SOURCE) -o $(ODIR)/$(PROJECTNAME)
