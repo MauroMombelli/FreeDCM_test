@@ -1,0 +1,7 @@
+# We use c
+language: c
+compiler: 
+  - gcc
+  - clang
+
+script: make all
