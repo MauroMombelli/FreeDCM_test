@@ -1,7 +1,7 @@
-#ifndef CC
+ifndef CC
 CC=gcc
 CFLAGS= -Wall -Wextra -Wpedantic -std=c11
-#endif
+endif
 LD=$(CC)
 
 PROJECTNAME=Test_FreeDcmTest
