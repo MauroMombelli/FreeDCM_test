@@ -1,7 +1,7 @@
-#ifndef CC
+ifndef CC
 CC=gcc
 CFLAGS= -Wall -Wextra -Wpedantic -std=c11
-#endif
+endif
 LD=$(CC)
 
 PROJECTNAME=Test_FreeDcmTest
@@ -11,6 +11,8 @@ ODIR=build
 LIBS= -I Dependencies  -lm
 
 SOURCE=$(shell find . -follow -name "*.c")
+
+.PHONY: all clean
 
 all: $(OBJ)
 	mkdir -p $(ODIR)
