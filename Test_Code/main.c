@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "FreeDCM/dcm.h"
+#include "dcm_conf.h"
 #include "original_implementations/MahonyAHRS.h"
 
 extern struct Vector3f gyroValue;
@@ -10,8 +11,8 @@ extern struct Vector3f magneValue;
 struct Quaternion4f ris;
 
 void do_step(int i) {
-	dcm_step(gyroValue);
-	dcm_get_quaternion(&ris);
+	DCM->dcm_step(gyroValue, sensors, sensors_size);
+	DCM->dcm_get_quaternion(&ris);
 
 	MahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x,
 			acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
@@ -35,7 +36,7 @@ void do_step(int i) {
 
 int main() {
 	printf("\ninitializingDCM");
-	dcm_init();
+	DCM->dcm_init();
 
 	dcm_get_quaternion(&ris);
 	printf("\nstepping DCM");
