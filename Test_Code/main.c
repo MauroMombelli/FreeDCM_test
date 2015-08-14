@@ -11,8 +11,8 @@ extern struct Vector3f magneValue;
 struct Quaternion4f ris;
 
 void do_step(int i) {
-	DCM->dcm_step(gyroValue, sensors, sensors_size);
-	DCM->dcm_get_quaternion(&ris);
+	DCM.dcm_step(&gyroValue, &sensor_array);
+	DCM.dcm_get_quaternion(&ris);
 
 	MahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x,
 			acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
@@ -36,9 +36,9 @@ void do_step(int i) {
 
 int main() {
 	printf("\ninitializingDCM");
-	DCM->dcm_init();
+	DCM.dcm_init();
 
-	dcm_get_quaternion(&ris);
+	DCM.dcm_get_quaternion(&ris);
 	printf("\nstepping DCM");
 	printf("\nstart_quat (%f,%f,%f,%f)", ris.w, ris.x, ris.y, ris.z);
 
