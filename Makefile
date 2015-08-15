@@ -19,4 +19,4 @@ all: $(OBJ)
 	$(CC) $(CFLAGS) $(LIBS) $(SOURCE) -o $(ODIR)/$(PROJECTNAME)
 
 clean:
-	rm -f $(ODIR) 
+	rm -rf $(ODIR) 

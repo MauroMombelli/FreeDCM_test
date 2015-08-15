@@ -35,6 +35,8 @@ void do_step(int i) {
 }
 
 int main() {
+    printf("check config: %d sensors", sensor_array.sensors_number);
+
 	printf("\ninitializingDCM");
 	DCM.dcm_init();
 

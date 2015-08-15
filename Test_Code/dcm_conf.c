@@ -32,5 +32,5 @@ const struct sensors sensor_array = {
             {NULL, &get_next_acce, &get_estimated_error_acce},
             {NULL, &get_next_magne, &get_estimated_error_magne}
         },
-        sizeof(sensor_array.sensors)/sizeof(sensor_array.sensors[0]),
+        2,
     };

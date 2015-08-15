@@ -16,7 +16,6 @@
 
 #include "MahonyAHRS.h"
 
-#include <stdio.h>
 #include "TrigonomeC/my_math.h"
 
 
@@ -183,7 +182,6 @@ void MahonyAHRSupdateIMU(float gx, float gy, float gz, float ax, float ay, float
 			integralFBy = 0.0f;
 			integralFBz = 0.0f;
 		}
-		printf("\nmahony halfe %f,%f,%f", halfex, halfey, halfez);
 		// Apply proportional feedback
 		gx += twoKp * halfex;
 		gy += twoKp * halfey;
