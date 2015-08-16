@@ -15,7 +15,7 @@ struct Quaternion4f ris;
 clock_t start = 0;
 
 void do_step(int i) {
-    DCM.dcm_step(&gyroValue, &sensor_array);
+    DCM.dcm_step(&sensor_array);
     DCM.dcm_get_quaternion(&ris);
 
     MahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x, acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
@@ -56,7 +56,7 @@ int main() {
     printf("\ntesting speed against mahony algoritm DCM");
     start = clock();
     for (i = 0; i < iteration; i++) {
-        DCM.dcm_step(&gyroValue, &sensor_array);
+        DCM.dcm_step(&sensor_array);
     }
     start = clock() - start;
     DCM.dcm_get_quaternion(&ris);

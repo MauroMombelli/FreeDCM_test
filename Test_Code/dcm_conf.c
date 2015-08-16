@@ -13,8 +13,9 @@ struct Vector3f magneValue = { 1, 1, 1 };
 
 const struct sensors sensor_array = {
         (struct error_estimator[]){
+            {GYROSCOPE, &gyroValue},
             {ACCELEROMETER, &acceValue},
             {MAGNETOMETER, &magneValue}
         },
-        2,
+        3,
     };
