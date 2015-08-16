@@ -1,3 +1,6 @@
+#use new container, as travis gently asked for it
+sudo: false
+
 # We use c
 language: c
 compiler: 
