@@ -41,7 +41,7 @@ void do_step(int i) {
 }
 
 int main() {
-    printf("check config: %d sensors", sensor_array.sensors_number);
+    printf("check config: %zu sensors", sensor_array.sensors_number);
 
     uint32_t i;
 
