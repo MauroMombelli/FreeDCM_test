@@ -1,6 +1,6 @@
 ifndef CC
 CC=gcc
-CFLAGS= -Wall -Wextra -Wpedantic -std=c11
+CFLAGS= -Wall -Wextra -Wpedantic -std=c11 -O0
 endif
 LD=$(CC)
 
