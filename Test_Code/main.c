@@ -18,7 +18,7 @@ void do_step(int i) {
     DCM.dcm_step(&sensor_array);
     DCM.dcm_get_quaternion(&ris);
 
-    MahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x, acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
+    mahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x, acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
 
     if (ris.w != q0 || ris.x != q1 || ris.y != q2 || ris.z != q3) {
         printf("\nstep %i", i);
@@ -65,7 +65,7 @@ int main() {
 
     start = clock();
     for (i = 0; i < iteration; i++) {
-        MahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x, acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
+        mahonyAHRSupdate(gyroValue.x, gyroValue.y, gyroValue.z, acceValue.x, acceValue.y, acceValue.z, magneValue.x, magneValue.y, magneValue.z);
     }
     start = clock() - start;
     printf("\nMahony iteration speed: %f Hz, resulting quaternion: %.9g,%.9g,%.9g,%.9g", iteration / ((float) start / CLOCKS_PER_SEC), q0, q1, q2, q3);
@@ -90,7 +90,7 @@ int main() {
 
     i=0;
     DCM.dcm_init();
-    MahonyAHRSreset();
+    mahonyAHRSreset();
 
     const float halfMax = RAND_MAX / 2.0f;
     start = clock();
